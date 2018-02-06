@@ -25,4 +25,60 @@ public class JobApplication {
     private String resumeUrl;
 
     private Boolean hired;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Applicant getApplicant() {
+        return applicant;
+    }
+
+    public void setApplicant(Applicant applicant) {
+        this.applicant = applicant;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public ApplicationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ApplicationStatus status) {
+        this.status = status;
+    }
+
+    public String getCoverLetterUrl() {
+        return coverLetterUrl;
+    }
+
+    public void setCoverLetterUrl(String coverLetterUrl) {
+        this.coverLetterUrl = coverLetterUrl;
+    }
+
+    public String getResumeUrl() {
+        return resumeUrl;
+    }
+
+    public void setResumeUrl(String resumeUrl) {
+        this.resumeUrl = resumeUrl;
+    }
+
+    public Boolean getHired() {
+        return hired;
+    }
+
+    public void setHired(Boolean hired) {
+        this.hired = hired;
+    }
 }

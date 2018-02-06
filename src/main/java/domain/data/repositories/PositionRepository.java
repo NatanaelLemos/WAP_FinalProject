@@ -5,7 +5,9 @@ import domain.data.RepositoryBase;
 import domain.entities.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class PositionRepository extends RepositoryBase<Position> implements IRepository<Position> {
 
@@ -63,12 +65,20 @@ public class PositionRepository extends RepositoryBase<Position> implements IRep
     }
 
     @Override
+    public Position get(int id) {
+        Optional<Position> pos = listInstance.stream().filter(p -> p.getId() == id).findFirst();
+        return pos.orElse(null);
+    }
+
+    @Override
     public List<Position> getAll() {
         return new ArrayList<>(listInstance);
     }
 
     @Override
     public void add(Position position) {
+        Optional<Position> pos = listInstance.stream().sorted(Comparator.comparing(Position::getId).reversed()).findFirst();
+        position.setId((pos.isPresent() ? pos.get().getId() : 0) + 1);
         listInstance.add(position);
     }
 }

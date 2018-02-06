@@ -4,40 +4,31 @@
 <html lang="en">
 <head>
     <jsp:include page="../partials/head.jsp" />
-    <title>Positions</title>
+    <title>Job application</title>
 </head>
 <body>
 <div id="wrapper">
     <jsp:include page="../partials/navbar.jsp">
-        <jsp:param name="selected" value="positions" />
+        <jsp:param name="selected" value="application" />
     </jsp:include>
 
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Positions</h1>
+                    <h1 class="page-header">Job application</h1>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-12">
-                    <a class="btn btn-success" href="/positions/new">
-                        <i class="fa fa-plus-circle"></i>
-                        New position
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="positionsTable" data-type="positions">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="positionsTable" data-type="application">
                         <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Open Position?</th>
-                                <th></th>
-                            </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
                         </thead>
                         <tbody>
                         </tbody>

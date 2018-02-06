@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
-        <a class="navbar-brand" href="home.html">HR Management System</a>
+        <a class="navbar-brand" href="/home">HR Management System</a>
         <img src="../../images/logo-Hr.png" alt="logo" style="padding: 10px 10px; height:50px " />
     </div>
     <ul class="nav navbar-top-links navbar-right">
@@ -33,6 +33,9 @@
                 </li>
                 <li>
                     <a class="${selected == 'positions' ? 'active' : '' }" href="/positions"><i class="fa fa-briefcase fa-fw"></i> Positions</a>
+                </li>
+                <li>
+                    <a class="${selected == 'application' ? 'active' : '' }" href="/application"><i class="fa fa-align-justify fa-fw"></i> Job Application</a>
                 </li>
             </ul>
         </div>
