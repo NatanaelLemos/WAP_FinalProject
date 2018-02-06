@@ -19,7 +19,7 @@ public class ApplicantRepository extends RepositoryBase<Applicant> implements IR
 
         if(instanceList == null){
             instanceList = new ArrayList<>();
-            instanceList.add(createFakeApplicant(1, "John Doe", "johndoe@emailsrv.test", new Date()));
+            instanceList.add(createFakeApplicant(1, "John Doe", "johndoe@email.test", new Date()));
         }
     }
 
