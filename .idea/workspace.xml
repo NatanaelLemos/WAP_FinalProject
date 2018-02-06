@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5de65de4-b292-440c-a26d-999ed38ac1b9" name="Default" comment="Login + Authentification">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WapFinal.iml" afterPath="$PROJECT_DIR$/WapFinal.iml" />
-    </list>
+    <list default="true" id="5de65de4-b292-440c-a26d-999ed38ac1b9" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -941,7 +938,7 @@
       <workItem from="1517892681624" duration="898000" />
       <workItem from="1517894134241" duration="11246000" />
       <workItem from="1517932446085" duration="11566000" />
-      <workItem from="1517946701880" duration="815000" />
+      <workItem from="1517946701880" duration="826000" />
     </task>
     <task id="LOCAL-00001" summary="Logout Servlet">
       <created>1517939725450</created>
@@ -979,11 +976,17 @@
       <option name="project" value="LOCAL" />
       <updated>1517946465152</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Login + Authentification">
+      <created>1517947520481</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1517947520481</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24525000" />
+    <option name="totallyTimeSpent" value="24536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
