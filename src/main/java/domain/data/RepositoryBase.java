@@ -3,9 +3,10 @@ package domain.data;
 import java.util.List;
 
 public class RepositoryBase<TEntity> implements IRepository<TEntity> {
+
     private Class<TEntity> type;
 
-    protected RepositoryBase(Class<TEntity> type){
+    public RepositoryBase(Class<TEntity> type){
         this.type = type;
     }
 

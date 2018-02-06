@@ -6,7 +6,7 @@ public class PositionViewModel {
     private int id;
     private String name;
     private String description;
-    private Boolean isOpenPosition;
+    private String openPosition;
 
     public int getId() {
         return id;
@@ -32,12 +32,12 @@ public class PositionViewModel {
         this.description = description;
     }
 
-    public Boolean getOpenPosition() {
-        return isOpenPosition;
+    public String getOpenPosition() {
+        return openPosition;
     }
 
-    public void setOpenPosition(Boolean openPosition) {
-        isOpenPosition = openPosition;
+    public void setOpenPosition(String openPosition) {
+        this.openPosition = openPosition;
     }
 
     public static PositionViewModel fromModel(Position p) {
@@ -45,7 +45,7 @@ public class PositionViewModel {
         vm.setId(p.getId());
         vm.setDescription(p.getDescription());
         vm.setName(p.getName());
-        vm.setOpenPosition(p.getOpenPosition());
+        vm.setOpenPosition(p.getOpenPosition() ? "Open" : "");
 
         return vm;
     }
