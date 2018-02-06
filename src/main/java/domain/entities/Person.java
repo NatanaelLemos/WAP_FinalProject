@@ -1,20 +1,20 @@
 package domain.entities;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.util.Date;
 
 public abstract class Person {
 
-    @Column(length=255)
+//    @Column(length=255)
     private String name;
 
-    @Column(length=255)
+//    @Column(length=255)
     private String email;
 
-    @Column(length=20)
+//    @Column(length=20)
     private String phone;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "address_id")
     private Address address;
 

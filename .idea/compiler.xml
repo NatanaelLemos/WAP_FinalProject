@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WAP_Final" />
+        <module name="WapFinal" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="WAP_Final" target="1.8" />
+      <module name="WapFinal" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

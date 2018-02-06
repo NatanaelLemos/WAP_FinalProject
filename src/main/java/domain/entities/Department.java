@@ -1,23 +1,23 @@
 package domain.entities;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.util.List;
 
-@Entity
+//@Entity
 public class Department {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 30)
+//    @Column(length = 30)
     private String name;
 
-    @OneToMany(
-            mappedBy = "department",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+//    @OneToMany(
+//            mappedBy = "department",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
     private List<Employee> employees;
 
     public String getName() {
