@@ -41,7 +41,7 @@ public class AuthenticationFilter implements Filter {
             filterChain.doFilter(request,response);
             return;
         }
-        if(session == null || session.getAttribute("userName") == null){
+        if(session == null || session.getAttribute("userId") == null){
             response.sendRedirect("/login");
         }else{
             filterChain.doFilter(request,response);

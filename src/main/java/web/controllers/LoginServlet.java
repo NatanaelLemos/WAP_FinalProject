@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
         }
-        session.setAttribute("userName","sadok");
+        session.setAttribute("userId","1");
         resp.sendRedirect("/home");
     }
 }
