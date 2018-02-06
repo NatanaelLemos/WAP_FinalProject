@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="positionsTable">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="positionsTable" data-type="positions">
                         <thead>
                             <tr>
                                 <th>Name</th>

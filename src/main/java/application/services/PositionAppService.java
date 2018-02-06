@@ -28,10 +28,6 @@ public class PositionAppService {
         p.setName(name);
         p.setDescription(description);
         p.setOpenPosition(openPosition);
-
-        Optional<Position> pos = repo.getAll().stream().sorted(Comparator.comparing(Position::getId).reversed()).findFirst();
-        p.setId((pos.isPresent() ? pos.get().getId() : 0) + 1);
-
         repo.add(p);
     }
 }
