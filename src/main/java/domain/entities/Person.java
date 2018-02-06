@@ -3,12 +3,7 @@ package domain.entities;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
 public abstract class Person {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
     @Column(length=255)
     private String name;

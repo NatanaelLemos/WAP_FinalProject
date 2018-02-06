@@ -5,7 +5,14 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>domain.entities.Address</class>
-        <class>domain.entities.Person</class>
+        <class>domain.entities.Applicant</class>
+        <class>domain.entities.ApplicationStatus</class>
+        <class>domain.entities.Department</class>
+        <class>domain.entities.Employee</class>
+        <class>domain.entities.HumanResourcesOfficer</class>
+        <class>domain.entities.JobApplication</class>
+        <class>domain.entities.PerformanceReview</class>
+        <class>domain.entities.Position</class>
 
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost/wapfinal"/>
