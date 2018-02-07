@@ -30,4 +30,21 @@ public class PositionAppService {
         p.setOpenPosition(openPosition);
         repo.add(p);
     }
+
+    public void delete(int positionId) {
+        Position p = repo.get(positionId);
+        repo.delete(p);
+    }
+
+    public Position getPosition(int id) {
+        return repo.get(id);
+    }
+
+    public void edit(int id, String name, String description, Boolean openPosition) {
+        Position p = getPosition(id);
+        p.setName(name);
+        p.setDescription(description);
+        p.setOpenPosition(openPosition);
+        repo.update(p);
+    }
 }

@@ -32,4 +32,10 @@ public class JobApplicationRepository extends RepositoryBase<JobApplication> imp
     public List<JobApplication> getAll() {
         return listInstance;
     }
+
+    @Override
+    public JobApplication get(int id) {
+        Optional<JobApplication> ap =listInstance.stream().filter(a -> a.getId() == id).findFirst();
+        return ap.orElse(null);
+    }
 }

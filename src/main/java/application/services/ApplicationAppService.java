@@ -44,7 +44,7 @@ public class ApplicationAppService {
         JobApplication a = new JobApplication();
         a.setPosition(position);
         a.setApplicant(applicant);
-        a.setStatus(new ApplicationStatus());
+        a.setStatus(ApplicationStatus.pending());
 
         position.setOpenPosition(true);
         applicant.getApplication().add(a);
@@ -57,12 +57,51 @@ public class ApplicationAppService {
                 .filter(a ->
                         a.getPosition().getId() == positionId &&
                         a.getApplicant().getId() == userId
-                ).findFirst();
+                )
+                .findFirst();
 
         if(!application.isPresent()){
             return null;
         }
 
         return application.get().getStatus();
+    }
+
+    public List<JobApplication> getApplicantApplications(int userId, int from, int to) {
+        return applicationRepo.getAll().stream()
+                .filter(a -> a.getApplicant().getId() == userId)
+                .skip(from)
+                .limit(to)
+                .collect(Collectors.toList());
+    }
+
+    public List<JobApplication> getApplications(int from, int to) {
+        return applicationRepo.getAll().stream().skip(from).limit(to).collect(Collectors.toList());
+    }
+
+    public int countApplicantApplications(int userId) {
+        return (int)applicationRepo.getAll().stream().filter(a -> a.getApplicant().getId() == userId).count();
+    }
+
+    public int countAllApplications() {
+        return applicationRepo.getAll().size();
+    }
+
+    public void setInterviewed(int id) {
+        JobApplication application = applicationRepo.get(id);
+        application.setStatus(ApplicationStatus.interviewed());
+        applicationRepo.update(application);
+    }
+
+    public void setRejected(int id) {
+        JobApplication application = applicationRepo.get(id);
+        application.setStatus(ApplicationStatus.rejected());
+        applicationRepo.update(application);
+    }
+
+    public void setAccepted(int id) {
+        JobApplication application = applicationRepo.get(id);
+        application.setStatus(ApplicationStatus.accepted());
+        applicationRepo.update(application);
     }
 }

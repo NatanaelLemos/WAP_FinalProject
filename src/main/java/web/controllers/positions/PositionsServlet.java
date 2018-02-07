@@ -49,4 +49,10 @@ public class PositionsServlet extends HttpServlet {
         );
         out.flush();
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+        int positionId = Integer.parseInt(request.getParameter("id"));
+        app.delete(positionId);
+    }
 }

@@ -1,5 +1,7 @@
 package web.controllers;
 
+import web.viewmodels.UserRole;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -28,6 +30,13 @@ public class LoginServlet extends HttpServlet {
                 }
             }
         }
+
+        if(req.getParameter("email").equals("applicant@email.com")) {
+            session.setAttribute("role", UserRole.JOB_APPLICANT);
+        }else{
+            session.setAttribute("role", UserRole.MANAGER);
+        }
+
         session.setAttribute("userId","1");
         resp.sendRedirect("/home");
     }

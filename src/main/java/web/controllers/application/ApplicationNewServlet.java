@@ -20,7 +20,7 @@ public class ApplicationNewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int positionId = Integer.parseInt(request.getParameter("id"));
-        int userId = 1; //Get user id from session
+        int userId = Integer.parseInt(request.getSession().getAttribute("userId").toString());
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
@@ -35,7 +35,7 @@ public class ApplicationNewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int positionId = Integer.parseInt(request.getParameter("id"));
-        int userId = 1; //Get user id from session
+        int userId = Integer.parseInt(request.getSession().getAttribute("userId").toString());
         app.apply(positionId, userId);
     }
 }

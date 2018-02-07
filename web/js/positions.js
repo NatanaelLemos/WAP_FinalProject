@@ -122,12 +122,23 @@ $(()=>{
                     var id = data.id;
 
                     if(btn.hasClass('edit')){
-                        alert('edit' + id);
+                        showLoading($('body'));
+                        window.location = `/positions/edit?id=${id}`;
                     }else{
                         if(!confirm('Are you sure?')){
                             return;
                         }
-                        alert('delete' + id);
+
+                        $.ajax({
+                            url: `/positions?id=${id}`,
+                            type: 'DELETE'
+                        })
+                        .done((res) => {
+                            table.ajax.reload();
+                        })
+                        .fail((xhr, err, status) => {
+                            alert(err);
+                        });
                     }
                 });
             },
