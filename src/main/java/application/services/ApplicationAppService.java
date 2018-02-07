@@ -3,12 +3,10 @@ package application.services;
 import domain.data.repositories.ApplicantRepository;
 import domain.data.repositories.JobApplicationRepository;
 import domain.data.repositories.PositionRepository;
-import domain.entities.Applicant;
-import domain.entities.ApplicationStatus;
-import domain.entities.JobApplication;
-import domain.entities.Position;
+import domain.entities.*;
 
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -103,5 +101,27 @@ public class ApplicationAppService {
         JobApplication application = applicationRepo.get(id);
         application.setStatus(ApplicationStatus.accepted());
         applicationRepo.update(application);
+    }
+
+    public Applicant createApplicant(String name, String email, String phone, Date birthdate) {
+        Applicant applicant = new Applicant();
+        applicant.setName(name);
+        applicant.setEmail(email);
+        applicant.setPhone(phone);
+        applicant.setBirthdate(birthdate);
+        applicantRepo.add(applicant);
+
+        return applicant;
+    }
+
+    public void createAddress(int applicantId, String street1, String street2, String city, String state, String zip) {
+        Applicant a = applicantRepo.get(applicantId);
+        Address address = new Address();
+        address.setStreetAddress1(street1);
+        address.setStreetAddress2(street2);
+        address.setCity(city);
+        address.setState(state);
+        address.setZipCode(zip);
+        a.setAddress(address);
     }
 }

@@ -5,10 +5,7 @@ import domain.data.RepositoryBase;
 import domain.entities.*;
 
 import java.time.DateTimeException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class ApplicantRepository extends RepositoryBase<Applicant> implements IRepository<Applicant> {
 
@@ -36,5 +33,12 @@ public class ApplicantRepository extends RepositoryBase<Applicant> implements IR
     public Applicant get(int id) {
         Optional<Applicant> a = instanceList.stream().filter(l -> l.getId() == id).findFirst();
         return a.orElse(null);
+    }
+
+    @Override
+    public void add(Applicant applicant) {
+        Optional<Applicant> a = instanceList.stream().sorted(Comparator.comparing(Applicant::getId).reversed()).findFirst();
+        applicant.setId((a.map(Applicant::getId).orElse(0)) + 1);
+        instanceList.add(applicant);
     }
 }

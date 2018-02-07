@@ -38,6 +38,9 @@
                             <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                         </fieldset>
                     </form>
+
+                    <br />
+                    <a href="/applicants/register">Register as job applicant</a>
                 </div>
             </div>
         </div>
