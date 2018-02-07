@@ -9,10 +9,15 @@ $(()=>{
     function getTableOptions(tableType){
         if(tableType === 'application') {
             return applicationTableOptions();
+        }else if(tableType === 'departments'){
+            return departmentsTableOptions();
+        }else if(tableType === 'employees'){
+            return employeesTableOptions();
         }else{
             return positionsTableOptions();
         }
     }
+
 
     let table = $('#positionsTable').DataTable({
         ajax: {
@@ -41,7 +46,7 @@ $(()=>{
             url: '/application',
             columns: [
                 { data: "name" },
-                { data: "description", },
+                { data: "description" },
                 {
                     "targets": -1,
                     "data": null,
@@ -139,6 +144,93 @@ $(()=>{
                         .fail((xhr, err, status) => {
                             alert(err);
                         });
+                    }
+                });
+            },
+            tableCallback: () => { }
+        };
+    }
+    function departmentsTableOptions(){
+        return {
+            url: '/departments',
+            columns: [
+                { data: "name" },
+                { data: "employeeNumber"},
+                {
+                    "data":"id",
+                    "render": function (data ) {
+                        console.log(data);
+                        var link = "/employees?deptId="+data;
+
+                        return "<a class='btn btn-warning' href='"+link+"'>"+
+                            "<i class='fa fa-external-link'></i>Show</a>";
+                    }
+                },
+                {
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button type='button' class='btn btn-primary edit'><i class='fa fa-pencil'></i></button>" +
+                    "<button type='button' class='btn btn-danger delete'><i class='fa fa-minus-circle'></i></button>",
+                    "width": "95px"
+                }
+            ],
+            tableClick: () => {
+                $('#positionsTable tbody').on('click', 'button', function () {
+                    var btn = $(this);
+                    var data = table.row($(this).parents('tr')).data();
+                    var id = data.id;
+                    if(btn.hasClass('edit')){
+                        alert('edit' + id);
+                    }else{
+                        if(!confirm('Are you sure?')){
+                            return;
+                        }
+                        alert('delete' + id);
+                    }
+                });
+            },
+            tableCallback: () => { }
+        };
+    }
+
+    function employeesTableOptions(){
+        return {
+            url: (function(){
+                var employeeByDeptId = $("#employeeByDeptId").val();
+                if(!employeeByDeptId){
+                    console.log("1");
+                    return "/employees";
+                }else {
+                    console.log("2");
+                    return "/employees?deptId=" + employeeByDeptId;
+                }
+            })(),
+            columns: [
+                {data: "name" },
+                {data: "positionName"},
+                {data: "departmentName"},
+                {data: "managerName"},
+                {data: "salary"},
+                {
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button type='button' class='btn btn-primary edit'><i class='fa fa-pencil'></i></button>" +
+                    "<button type='button' class='btn btn-danger delete'><i class='fa fa-minus-circle'></i></button>",
+                    "width": "95px"
+                }
+            ],
+            tableClick: () => {
+                $('#positionsTable tbody').on('click', 'button', function () {
+                    var btn = $(this);
+                    var data = table.row($(this).parents('tr')).data();
+                    var id = data.id;
+                    if(btn.hasClass('edit')){
+                        alert('edit' + id);
+                    }else{
+                        if(!confirm('Are you sure?')){
+                            return;
+                        }
+                        alert('delete' + id);
                     }
                 });
             },

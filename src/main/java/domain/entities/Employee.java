@@ -48,4 +48,92 @@ public class Employee extends Person {
 //            orphanRemoval = true
 //    )
     private List<PerformanceReview> reviewed;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Date getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(Date hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public Date getFireDate() {
+        return fireDate;
+    }
+
+    public void setFireDate(Date fireDate) {
+        this.fireDate = fireDate;
+    }
+
+    public Double getCurrentSalary() {
+        return currentSalary;
+    }
+
+    public void setCurrentSalary(Double currentSalary) {
+        this.currentSalary = currentSalary;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public Employee getManager() {
+        return manager;
+    }
+
+    public void setManager(Employee manager) {
+        this.manager = manager;
+    }
+
+    public List<Employee> getManagedEmployees() {
+        return managedEmployees;
+    }
+
+    public void setManagedEmployees(List<Employee> managedEmployees) {
+        this.managedEmployees = managedEmployees;
+    }
+
+    public List<PerformanceReview> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<PerformanceReview> reviews) {
+        this.reviews = reviews;
+    }
+
+    public List<PerformanceReview> getReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(List<PerformanceReview> reviewed) {
+        this.reviewed = reviewed;
+    }
 }
