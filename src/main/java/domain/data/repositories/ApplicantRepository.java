@@ -9,7 +9,7 @@ import java.util.*;
 
 public class ApplicantRepository extends RepositoryBase<Applicant> implements IRepository<Applicant> {
 
-    private static List<Applicant> instanceList;
+    private static volatile List<Applicant> instanceList;
 
     public ApplicantRepository() {
         super(Applicant.class);
@@ -41,7 +41,7 @@ public class ApplicantRepository extends RepositoryBase<Applicant> implements IR
     }
 
     @Override
-    public void add(Applicant applicant) {
+    public synchronized void add(Applicant applicant) {
         Optional<Applicant> a = instanceList.stream().sorted(Comparator.comparing(Applicant::getId).reversed()).findFirst();
         applicant.setId((a.map(Applicant::getId).orElse(0)) + 1);
         instanceList.add(applicant);

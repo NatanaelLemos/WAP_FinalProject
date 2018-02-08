@@ -10,7 +10,7 @@ import java.util.List;
 
 public class HumanResourcesOfficerRepository extends RepositoryBase<HumanResourcesOfficer> implements IRepository<HumanResourcesOfficer> {
 
-    private static List<HumanResourcesOfficer> list;
+    private static volatile List<HumanResourcesOfficer> list;
 
     public HumanResourcesOfficerRepository() {
         super(HumanResourcesOfficer.class);

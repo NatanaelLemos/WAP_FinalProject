@@ -34,7 +34,7 @@ public class ApplicationAppService {
                 .filter(Position::getOpenPosition).count();
     }
 
-    public void apply(int positionId, int userId){
+    public synchronized void apply(int positionId, int userId){
         Position position = positionRepo.get(positionId);
         Applicant applicant = applicantRepo.get(userId);
 

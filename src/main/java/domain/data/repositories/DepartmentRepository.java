@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class DepartmentRepository extends RepositoryBase<Department> implements IRepository<Department> {
 
-    public static List<Department> listInstance;
+    public static volatile List<Department> listInstance;
 
     public DepartmentRepository() {
         super(Department.class);

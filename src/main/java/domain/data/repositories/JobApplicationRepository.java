@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class JobApplicationRepository extends RepositoryBase<JobApplication> implements IRepository<JobApplication> {
 
-    private static List<JobApplication> listInstance;
+    private static volatile List<JobApplication> listInstance;
 
     public JobApplicationRepository() {
         super(JobApplication.class);

@@ -54,7 +54,7 @@ public class EmployeeAppService {
     }
 
 
-    public boolean create(String postionId, String departmentId, String isActive, String dateStart, String endDate, String managerId, String salary,
+    public synchronized boolean create(String postionId, String departmentId, String isActive, String dateStart, String endDate, String managerId, String salary,
                           String name, String email, String homePhone, String cellPhone, Address home,Address mail,String birthday){
         Employee newEmployee = new Employee();
         Position p = posService.getPosition(Integer.parseInt(postionId));

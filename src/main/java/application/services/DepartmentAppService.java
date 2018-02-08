@@ -35,7 +35,7 @@ public class DepartmentAppService {
         return (int) EmployeeRepository.listInstance.stream().filter(employee -> employee.getDepartment().getId()== d.getId()).count();
     }
 
-    public boolean create(String name){
+    public synchronized boolean create(String name){
         Department d = new Department();
         d.setName(name);
         if(repo.getAll().contains(d)){

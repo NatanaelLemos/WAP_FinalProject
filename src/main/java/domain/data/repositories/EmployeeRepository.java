@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class EmployeeRepository extends RepositoryBase<Employee> implements IRepository<Employee> {
 
-    public static List<Employee> listInstance;
+    public static volatile List<Employee> listInstance;
 
 
     public EmployeeRepository() {

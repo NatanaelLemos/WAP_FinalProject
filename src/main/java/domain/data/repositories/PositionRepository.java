@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class PositionRepository extends RepositoryBase<Position> implements IRepository<Position> {
 
-    public static List<Position> listInstance;
+    public static volatile List<Position> listInstance;
 
     public PositionRepository() {
         super(Position.class);
