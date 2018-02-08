@@ -45,9 +45,10 @@ public class LoginServlet extends HttpServlet {
         }else if(app.getApplicantByEmail(email) != null) {
             session.setAttribute("userId",app.getApplicantByEmail(email).getId());
             session.setAttribute("role", UserRole.JOB_APPLICANT);
+        }else {
+            resp.sendRedirect("/login");
         }
 
-        session.setAttribute("userId","1");
         resp.sendRedirect("/home");
     }
 }
