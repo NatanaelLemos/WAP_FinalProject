@@ -47,6 +47,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("role", UserRole.JOB_APPLICANT);
         }else {
             resp.sendRedirect("/login");
+            return;
         }
 
         resp.sendRedirect("/home");
