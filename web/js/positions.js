@@ -89,12 +89,18 @@ $(()=>{
 
                     $.get('/application/new', { id: data.id })
                     .done((res) => {
-                        if(res.applied === false) {
+                        if(userRole === 'JOB_APPLICANT'){
+                            if(res.applied === false) {
+                                row.find('button')
+                                .removeClass('btn-success')
+                                .addClass('btn-primary')
+                                .removeAttr('disabled')
+                                .html('<i class="fa fa-check-circle"></i> Apply for this position');
+                            }
+                        }else{
                             row.find('button')
                             .removeClass('btn-success')
-                            .addClass('btn-primary')
-                            .removeAttr('disabled')
-                            .html('<i class="fa fa-check-circle"></i> Apply for this position');
+                            .html(' ');
                         }
                     })
                     .fail((xhr, err, status) => {

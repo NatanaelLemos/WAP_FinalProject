@@ -44,6 +44,9 @@
     <img src="<c:url value='/images/loading.gif'/>" alt="Loading" />
 </div>
 
+<script>
+    const userRole = '${sessionScope.get("role").toString()}';
+</script>
 <jsp:include page="../partials/scripts.jsp" />
 
 <script src="<c:url value='/resources/vendor/datatables/js/jquery.dataTables.min.js'/>"></script>
