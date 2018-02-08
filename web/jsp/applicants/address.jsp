@@ -30,15 +30,15 @@
                         </div>
                         <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="City" required />
+                            <input type="text" class="form-control city" id="city" name="city" placeholder="City" required />
                         </div>
                         <div class="form-group">
                             <label for="state">State</label>
-                            <input type="text" class="form-control" id="state" name="state" placeholder="State" required />
+                            <input type="text" class="form-control state" id="state" name="state" placeholder="State" required />
                         </div>
                         <div class="form-group">
                                 <label for="zip">Zip code</label>
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" required />
+                                <input type="text" class="form-control zip" id="zip" name="zip" placeholder="Zip" required />
                         </div>
 
                         <button type="submit" class="btn btn-primary">Register</button>

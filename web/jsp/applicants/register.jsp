@@ -21,7 +21,7 @@
                     <form action="/applicants/register" method="post" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required  />
+                            <input type="text" class="form-control username" id="name" name="name" placeholder="Name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -33,7 +33,12 @@
                         </div>
                         <div class="form-group">
                             <label for="birthdate">Birthdate</label>
-                            <input type="text" class="form-control date" id="birthdate" name="birthdate" required />
+                            <div class='input-group date' id='datetimepickerStart'>
+                                <input type='Date' class="form-control" name="birthdate" id="birthdate" required />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Register</button>

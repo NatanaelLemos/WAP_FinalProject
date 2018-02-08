@@ -72,8 +72,15 @@ $(()=>{
         if(btn.hasClass('interviewed')){
             status = 'interviewed';
         }else if(btn.hasClass('rejected')){
+            if(!confirm('Are you sure?')){
+                return;
+            }
+
             status = 'rejected';
         }else if(btn.hasClass('accepted')){
+            if(!confirm('Are you sure?')){
+                return;
+            }
             status = 'accepted';
         }else{
             return;

@@ -88,7 +88,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">$</i>
                                             </span>
-                                            <input id="salary" name="salary" type="text" class="form-control" value="${employeeInstance.currentSalary}" >
+                                            <input id="salary" name="salary" type="text" class="form-control currency" value="${employeeInstance.currentSalary}" >
                                         </div>
                                     </div>
                                 </div>
@@ -105,31 +105,31 @@
                                 <div class="panel-body">
                                    <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required  value="${employeeInstance.name}" />
+                                        <input type="text" class="form-control name" id="name" name="name" placeholder="Name" required  value="${employeeInstance.name}" />
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required value="${employeeInstance.email}"  />
+                                        <input type="email" class="form-control email" id="email" name="email" placeholder="Email" required value="${employeeInstance.email}"  />
                                     </div>
                                     <div class="form-group">
                                         <label for="homePhone">Home Phone</label>
-                                        <input type="text" class="form-control" id="homePhone" name="homePhone" placeholder="Home Phone" required value="${employeeInstance.phone}" />
+                                        <input type="text" class="form-control phone" id="homePhone" name="homePhone" placeholder="Home Phone" required value="${employeeInstance.phone}" />
                                     </div>
                                     <div class="form-group">
                                       <label for="cellPhone">Cell Phone</label>
-                                        <input type="text" class="form-control" id="cellPhone" name="cellPhone" placeholder="Cell Phone" required value="${employeeInstance.cellPhone}" />
+                                        <input type="text" class="form-control phone" id="cellPhone" name="cellPhone" placeholder="Cell Phone" required value="${employeeInstance.cellPhone}" />
                                     </div>
                                     <div class="form-group">
                                          <label>Home Address</label>
                                          <div class="row">
                                              <div class="col-md-3" >
-                                                 <input type="text" class="form-control" id="stateHome" name="stateHome" placeholder="State" required value="${employeeInstance.address.state}"  />
+                                                 <input type="text" class="form-control state" id="stateHome" name="stateHome" placeholder="State" required value="${employeeInstance.address.state}"  />
                                              </div>
                                              <div class="col-md-3">
-                                                 <input type="text" class="form-control" id="cityHome" name="cityHome" placeholder="City" required value="${employeeInstance.address.city}" />
+                                                 <input type="text" class="form-control city" id="cityHome" name="cityHome" placeholder="City" required value="${employeeInstance.address.city}" />
                                              </div>
                                              <div class="col-md-2">
-                                                 <input type="text" class="form-control" id="zipHome" name="zipHome" placeholder="Zip Code" required value="${employeeInstance.address.zipCode}"  />
+                                                 <input type="text" class="form-control zip" id="zipHome" name="zipHome" placeholder="Zip Code" required value="${employeeInstance.address.zipCode}"  />
                                              </div>
                                              <div class="col-md-4">
                                                  <input type="text" class="form-control" id="streetHome" name="streetHome" placeholder="Street" required value="${employeeInstance.address.streetAddress1}" />
@@ -140,13 +140,13 @@
                                              <label>Mailing Address</label>
                                              <div class="row">
                                                  <div class="col-md-3" >
-                                                     <input type="text" class="form-control" id="stateMail" name="stateMail" placeholder="State" required value="${employeeInstance.mailAddress.state}" />
+                                                     <input type="text" class="form-control state" id="stateMail" name="stateMail" placeholder="State" required value="${employeeInstance.mailAddress.state}" />
                                                  </div>
                                                  <div class="col-md-3">
-                                                     <input type="text" class="form-control" id="cityMail" name="cityMail" placeholder="City" required value="${employeeInstance.mailAddress.city}" />
+                                                     <input type="text" class="form-control city" id="cityMail" name="cityMail" placeholder="City" required value="${employeeInstance.mailAddress.city}" />
                                                  </div>
                                                  <div class="col-md-2">
-                                                     <input type="text" class="form-control" id="zipMail" name="zipMail" placeholder="Zip Code" required value="${employeeInstance.mailAddress.zipCode}" />
+                                                     <input type="text" class="form-control zip" id="zipMail" name="zipMail" placeholder="Zip Code" required value="${employeeInstance.mailAddress.zipCode}" />
                                                  </div>
                                                  <div class="col-md-4">
                                                      <input type="text" class="form-control" id="streetMail" name="streetMail" placeholder="Street" required value="${employeeInstance.mailAddress.streetAddress1}" />

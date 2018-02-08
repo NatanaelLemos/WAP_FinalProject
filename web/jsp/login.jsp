@@ -28,7 +28,7 @@
                                 <input class="form-control" placeholder="E-mail" name="email" type="email"  value="${cookie.get("email").value}" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="" required />
                             </div>
                             <div class="checkbox">
                                 <label>

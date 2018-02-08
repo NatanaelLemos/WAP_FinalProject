@@ -83,7 +83,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">$</i>
                                             </span>
-                                            <input id="salary" name="salary" type="text" class="form-control" >
+                                            <input id="salary" name="salary" type="text" class="form-control currency" >
                                         </div>
                                     </div>
                                 </div>
@@ -100,31 +100,31 @@
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required  />
+                                        <input type="text" class="form-control username" id="name" name="name" placeholder="Name" required  />
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required  />
+                                        <input type="email" class="form-control email" id="email" name="email" placeholder="Email" required  />
                                     </div>
                                     <div class="form-group">
                                         <label for="homePhone">Home Phone</label>
-                                        <input type="text" class="form-control" id="homePhone" name="homePhone" placeholder="Home Phone" required  />
+                                        <input type="text" class="form-control phone" id="homePhone" name="homePhone" placeholder="Home Phone" required  />
                                     </div>
                                     <div class="form-group">
                                         <label for="cellPhone">Cell Phone</label>
-                                        <input type="text" class="form-control" id="cellPhone" name="cellPhone" placeholder="Cell Phone" required  />
+                                        <input type="text" class="form-control phone" id="cellPhone" name="cellPhone" placeholder="Cell Phone" required  />
                                     </div>
                                     <div class="form-group">
                                         <label>Home Address</label>
                                         <div class="row">
                                             <div class="col-md-3" >
-                                                <input type="text" class="form-control" id="stateHome" name="stateHome" placeholder="State" required  />
+                                                <input type="text" class="form-control state" id="stateHome" name="stateHome" placeholder="State" required  />
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="text" class="form-control" id="cityHome" name="cityHome" placeholder="City" required  />
+                                                <input type="text" class="form-control city" id="cityHome" name="cityHome" placeholder="City" required  />
                                             </div>
                                             <div class="col-md-2">
-                                                <input type="text" class="form-control" id="zipHome" name="zipHome" placeholder="Zip Code" required  />
+                                                <input type="text" class="form-control zip" id="zipHome" name="zipHome" placeholder="Zip Code" required  />
                                             </div>
                                             <div class="col-md-4">
                                                 <input type="text" class="form-control" id="streetHome" name="streetHome" placeholder="Street" required  />
@@ -135,13 +135,13 @@
                                         <label>Mailing Address</label>
                                         <div class="row">
                                             <div class="col-md-3" >
-                                                <input type="text" class="form-control" id="stateMail" name="stateMail" placeholder="State" required  />
+                                                <input type="text" class="form-control state" id="stateMail" name="stateMail" placeholder="State" required  />
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="text" class="form-control" id="cityMail" name="cityMail" placeholder="City" required  />
+                                                <input type="text" class="form-control city" id="cityMail" name="cityMail" placeholder="City" required  />
                                             </div>
                                             <div class="col-md-2">
-                                                <input type="text" class="form-control" id="zipMail" name="zipMail" placeholder="Zip Code" required  />
+                                                <input type="text" class="form-control zip" id="zipMail" name="zipMail" placeholder="Zip Code" required  />
                                             </div>
                                             <div class="col-md-4">
                                                 <input type="text" class="form-control" id="streetMail" name="streetMail" placeholder="Street" required  />
