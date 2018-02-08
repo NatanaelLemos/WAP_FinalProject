@@ -48,7 +48,7 @@
                 </li>
                 <li>
                     <a class="${selected == 'applications' ? 'active' : '' }" href="/applications"><i
-                            class="fa fa-align-justify fa-fw"></i> Applications</a>
+                            class="fa fa-edit fa-fw"></i> Applications</a>
                 </li>
             </ul>
         </div>
