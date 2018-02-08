@@ -10,7 +10,7 @@ public class Address {
     private int id;
 
     public Address(){
-        
+
     }
     public Address(String state, String city, String zipCode, String street){
         this.state = state;
