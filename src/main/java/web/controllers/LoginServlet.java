@@ -1,5 +1,6 @@
 package web.controllers;
 
+import application.services.LoginAppService;
 import web.viewmodels.UserRole;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    private LoginAppService app = new LoginAppService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
@@ -31,10 +34,17 @@ public class LoginServlet extends HttpServlet {
             }
         }
 
-        if(req.getParameter("email").equals("applicant@email.com")) {
+        String email =req.getParameter("email");
+
+        if(app.getOfficerByEmail(email) != null) {
+            session.setAttribute("userId",app.getOfficerByEmail(email).getId());
+            session.setAttribute("role", UserRole.HR_OFFICER);
+        }else if (app.getEmployeeByEmail(email) != null){
+            session.setAttribute("userId",app.getEmployeeByEmail(email).getId());
+            session.setAttribute("role", UserRole.EMPLOYEE);
+        }else if(app.getApplicantByEmail(email) != null) {
+            session.setAttribute("userId",app.getApplicantByEmail(email).getId());
             session.setAttribute("role", UserRole.JOB_APPLICANT);
-        }else{
-            session.setAttribute("role", UserRole.MANAGER);
         }
 
         session.setAttribute("userId","1");

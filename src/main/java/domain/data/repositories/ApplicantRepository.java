@@ -16,7 +16,7 @@ public class ApplicantRepository extends RepositoryBase<Applicant> implements IR
 
         if(instanceList == null){
             instanceList = new ArrayList<>();
-            instanceList.add(createFakeApplicant(1, "John Doe", "johndoe@email.test", new Date()));
+            //instanceList.add(createFakeApplicant(1, "John Doe", "johndoe@email.test", new Date()));
         }
     }
 
@@ -33,6 +33,11 @@ public class ApplicantRepository extends RepositoryBase<Applicant> implements IR
     public Applicant get(int id) {
         Optional<Applicant> a = instanceList.stream().filter(l -> l.getId() == id).findFirst();
         return a.orElse(null);
+    }
+
+    @Override
+    public List<Applicant> getAll() {
+        return instanceList;
     }
 
     @Override
