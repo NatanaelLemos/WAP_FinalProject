@@ -23,6 +23,10 @@ public class PositionAppService {
         return repo.getAll().size();
     }
 
+    public List<Position> getPositionByStatus(boolean status){
+        return repo.getAll().stream().filter(position -> position.getOpenPosition().booleanValue()==status).collect(Collectors.toList());
+    }
+
     public void create(String name, String description, Boolean openPosition) {
         Position p = new Position();
         p.setName(name);
