@@ -4,9 +4,8 @@ import domain.data.IRepository;
 import domain.data.RepositoryBase;
 import domain.entities.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class EmployeeRepository extends RepositoryBase<Employee> implements IRepository<Employee> {
 
@@ -25,8 +24,8 @@ public class EmployeeRepository extends RepositoryBase<Employee> implements IRep
         List<Department> listOfDept = DepartmentRepository.listInstance;
         List<Position> listOfPositions = PositionRepository.listInstance;
         list.add(createFakeEmployee(1, true,"Christopher",null,null,new Double(120),listOfDept.get(0),listOfPositions.get(0),null));
-        list.add(createFakeEmployee(1, true,"John",null,null,new Double(150.33),listOfDept.get(1),listOfPositions.get(1),null));
-        list.add(createFakeEmployee(1, true,"Ninja",null,null,new Double(310),listOfDept.get(0),listOfPositions.get(2),null));
+        list.add(createFakeEmployee(2, true,"John",null,null,new Double(150.33),listOfDept.get(1),listOfPositions.get(1),null));
+        list.add(createFakeEmployee(3, true,"Ninja",null,null,new Double(310),listOfDept.get(0),listOfPositions.get(2),null));
         return list;
     }
 
@@ -47,5 +46,24 @@ public class EmployeeRepository extends RepositoryBase<Employee> implements IRep
     @Override
     public List<Employee> getAll() {
         return new ArrayList<>(listInstance);
+    }
+
+    @Override
+    public Employee get(int id) {
+        Optional<Employee> emp = listInstance.stream().filter(e -> e.getId() == id).findFirst();
+        return emp.orElse(null);
+    }
+
+    @Override
+    public void add(Employee employee) {
+        Optional<Employee> emp = listInstance.stream().sorted(Comparator.comparing(Employee::getId).reversed()).findFirst();
+        employee.setId((emp.isPresent() ? emp.get().getId() : 0) + 1);
+        listInstance.add(employee);
+    }
+
+    @Override
+    public void delete(Employee employee) {
+        List<Employee> newListInstance = listInstance.stream().filter(e->(e.getId()!=employee.getId())).collect(Collectors.toList());
+        listInstance = newListInstance;
     }
 }

@@ -179,13 +179,24 @@ $(()=>{
                     var btn = $(this);
                     var data = table.row($(this).parents('tr')).data();
                     var id = data.id;
+                    var employeeNumber = data.employeeNumber;
                     if(btn.hasClass('edit')){
-                        alert('edit' + id);
+                        window.location.href = "/departments/edit?deptId="+id
                     }else{
-                        if(!confirm('Are you sure?')){
-                            return;
+                        if(employeeNumber != 0){
+                            alert("A department containing employee(s) cannot be deleted");
+                        }else {
+                            if (!confirm('Are you sure?')) {
+                                return;
+                            }
+                            $.ajax({
+                                url: "/departments?deptId="+id,
+                                type:"DELETE"
+                            }).done(function() {
+                                table.ajax.reload();
+                            });
+
                         }
-                        alert('delete' + id);
                     }
                 });
             },
@@ -225,12 +236,17 @@ $(()=>{
                     var data = table.row($(this).parents('tr')).data();
                     var id = data.id;
                     if(btn.hasClass('edit')){
-                        alert('edit' + id);
+                        window.location.href = "/employees/edit?employeeId="+id;
                     }else{
                         if(!confirm('Are you sure?')){
                             return;
                         }
-                        alert('delete' + id);
+                        $.ajax({
+                            url: "/employees?employeeId="+id,
+                            type:"DELETE"
+                        }).done(function() {
+                            table.ajax.reload();
+                        });
                     }
                 });
             },

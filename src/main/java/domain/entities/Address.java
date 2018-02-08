@@ -9,6 +9,13 @@ public class Address {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    public Address(String state, String city, String zipCode, String street){
+        this.state = state;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.streetAddress1 = street;
+    }
+
 //    @Column(length=100)
     private String streetAddress1;
 
@@ -23,14 +30,6 @@ public class Address {
 
 //    @Column(length=15)
     private String zipCode;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getStreetAddress1() {
         return streetAddress1;

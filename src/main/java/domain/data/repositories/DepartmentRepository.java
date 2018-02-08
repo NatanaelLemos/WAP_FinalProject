@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 public class DepartmentRepository extends RepositoryBase<Department> implements IRepository<Department> {
@@ -48,5 +49,17 @@ public class DepartmentRepository extends RepositoryBase<Department> implements 
         Optional<Department> dep = listInstance.stream().sorted(Comparator.comparing(Department::getId).reversed()).findFirst();
         department.setId((dep.isPresent() ? dep.get().getId() : 0) + 1);
         listInstance.add(department);
+    }
+
+    @Override
+    public Department get(int id) {
+        Optional<Department> dept = listInstance.stream().filter(d -> d.getId() == id).findFirst();
+        return dept.orElse(null);
+    }
+
+    @Override
+    public void delete(Department department) {
+        List<Department> newListInstance = listInstance.stream().filter(d->(d.getId()!=department.getId())).collect(Collectors.toList());
+        listInstance = newListInstance;
     }
 }

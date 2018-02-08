@@ -14,9 +14,13 @@ public abstract class Person {
 //    @Column(length=20)
     private String phone;
 
+    private String cellPhone;
+
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "address_id")
     private Address address;
+
+    private Address mailAddress;
 
     private Date birthdate;
 
@@ -58,5 +62,21 @@ public abstract class Person {
 
     public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
+    }
+
+    public String getCellPhone() {
+        return cellPhone;
+    }
+
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
+    }
+
+    public Address getMailAddress() {
+        return mailAddress;
+    }
+
+    public void setMailAddress(Address mailAddress) {
+        this.mailAddress = mailAddress;
     }
 }

@@ -136,4 +136,17 @@ public class Employee extends Person {
     public void setReviewed(List<PerformanceReview> reviewed) {
         this.reviewed = reviewed;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
+            return false;
+        if(!(obj instanceof Employee))
+            return false;
+        Employee e = (Employee) obj;
+        if(this.getId() == e.getId())
+            return true;
+        else
+            return false;
+    }
 }

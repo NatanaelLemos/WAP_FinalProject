@@ -17,7 +17,7 @@ import java.util.Set;
 
 @WebFilter(
         filterName = "authentication",
-        urlPatterns = {"/","/home","/logout","/positions","/positions/new","/departments","/departments/new","/application","/employees","/employees/new","/jsp/*"}
+        urlPatterns = {"/","/home","/logout","/positions","/positions/new","/departments","/departments/new","/departments/edit","/application","/employees","/employees/new","/employees/edit","/jsp/*"}
 )
 public class AuthenticationFilter implements Filter {
 
