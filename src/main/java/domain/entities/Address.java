@@ -9,6 +9,9 @@ public class Address {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    public Address(){
+        
+    }
     public Address(String state, String city, String zipCode, String street){
         this.state = state;
         this.city = city;
