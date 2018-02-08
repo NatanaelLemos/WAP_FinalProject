@@ -57,4 +57,9 @@ public class PositionRepository extends RepositoryBase<Position> implements IRep
         position.setId((pos.isPresent() ? pos.get().getId() : 0) + 1);
         listInstance.add(position);
     }
+
+    @Override
+    public void delete(Position position) {
+        listInstance.remove(position);
+    }
 }
